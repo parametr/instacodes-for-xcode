@@ -10,10 +10,14 @@
 #import "ICPMainController.h"
 #import "NSString+WebExtensions.h"
 
+//==============================================================================================================================================================
+
 NSString * const kBrowserBundleIDFirefox = @"org.mozilla.firefox";
 NSString * const kBrowserBundleIDChrome = @"com.google.Chrome";
 NSString * const kBrowserBundleIDSafari = @"com.apple.Safari";
 NSString * const kBrowserBundleIDOpera = @"com.operasoftware.Opera";
+
+NSString * const kSafariPrefsWebGLSupportKey = @"WebKitWebGLEnabled";
 
 NSString * const kMenuItemTitle = @"Post to Instacode";
 
@@ -50,6 +54,8 @@ NSString * const kMenuItemTitle = @"Post to Instacode";
     
     return self;
 }
+
+#pragma mark - Action and notification handlers -
 
 - (void)applicationDidFinishLaunching:(NSNotification*)notification
 {
@@ -127,15 +133,36 @@ NSString * const kMenuItemTitle = @"Post to Instacode";
     }
     else
     {
-        NSString * postCode = [self.currentSelection URLEncodedString];
-        NSString * URLString = [NSString stringWithFormat:@"http://instacod.es/?post_code=%@&post_lang=%@", postCode, @"ObjC"];
+        BOOL webGLEnabled = YES;
         
-        [[NSWorkspace sharedWorkspace] openURLs:@[[NSURL URLWithString:URLString]] withAppBundleIdentifier:browserID
-            options:NSWorkspaceLaunchDefault additionalEventParamDescriptor:nil launchIdentifiers:NULL];
+        if ([browserID isEqualToString:kBrowserBundleIDSafari])
+        {
+            // Check if Safari supports WebGL
+            BOOL supportsWebGL = [[[NSUserDefaults standardUserDefaults] persistentDomainForName:kBrowserBundleIDSafari][kSafariPrefsWebGLSupportKey] boolValue];
+            
+            if (!supportsWebGL)
+            {
+                [[NSAlert alertWithMessageText:@"WebGL support is disabled in Safari by default"
+                    defaultButton:@"OK" alternateButton:nil otherButton:nil
+                    informativeTextWithFormat:@"Instacod.es requires browser that supports WebGL to work properly. To enable WebGL in Safari, "
+                    "go to Safari Preferences -> Advanced tab, check 'Show Develop menu in menu bar'. "
+                    "Then open Develop menu and check Enable WebGL menu item."] runModal];
+                webGLEnabled = NO;
+            }
+        }
+        
+        if (webGLEnabled)
+        {
+            NSString * postCode = [self.currentSelection URLEncodedString];
+            NSString * URLString = [NSString stringWithFormat:@"http://instacod.es/?post_code=%@&post_lang=%@", postCode, @"ObjC"];
+            
+            [[NSWorkspace sharedWorkspace] openURLs:@[[NSURL URLWithString:URLString]] withAppBundleIdentifier:browserID
+                options:NSWorkspaceLaunchDefault additionalEventParamDescriptor:nil launchIdentifiers:NULL];
+        }
     }
 }
 
-#pragma mark
+#pragma mark - Private methods -
 
 - (NSArray *)installedBrowsers
 {
