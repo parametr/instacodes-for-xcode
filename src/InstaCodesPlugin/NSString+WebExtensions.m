@@ -13,9 +13,9 @@
 - (NSString *)URLEncodedString
 {
     CFStringRef originalString = (CFStringRef)self;
-    CFStringRef legalURLCharactersToBeEscaped = CFSTR("!#$%&'()*+,/:;=?@[]^");
+    CFStringRef charactersToBeEscaped = CFSTR("!#$%&'()*+,/:;=?@[]^{}<>` ");
 
-    CFStringRef URLEncodedString = CFURLCreateStringByAddingPercentEscapes(NULL, originalString, NULL, legalURLCharactersToBeEscaped, kCFStringEncodingUTF8);
+    CFStringRef URLEncodedString = CFURLCreateStringByAddingPercentEscapes(NULL, originalString, NULL, charactersToBeEscaped, kCFStringEncodingUTF8);
 
     return [(NSString *)URLEncodedString autorelease];
 }

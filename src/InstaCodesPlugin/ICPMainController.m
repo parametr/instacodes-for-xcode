@@ -13,6 +13,9 @@
 NSString * const kBrowserBundleIDFirefox = @"org.mozilla.firefox";
 NSString * const kBrowserBundleIDChrome = @"com.google.Chrome";
 NSString * const kBrowserBundleIDSafari = @"com.apple.Safari";
+NSString * const kBrowserBundleIDOpera = @"com.operasoftware.Opera";
+
+NSString * const kMenuItemTitle = @"Post to Instacode";
 
 //==============================================================================================================================================================
 
@@ -64,28 +67,28 @@ NSString * const kBrowserBundleIDSafari = @"com.apple.Safari";
         
         if ([browsers count] < 2)
         {
-            newMenuItem = [[NSMenuItem alloc] initWithTitle:@"Post to Instacodes" action:@selector(postToInstacodes:) keyEquivalent:nil];
+            newMenuItem = [[NSMenuItem alloc] initWithTitle:kMenuItemTitle action:NULL keyEquivalent:@""];
             [newMenuItem setTarget:self];
             [newMenuItem setRepresentedObject:[browsers lastObject]];
         }
         else
         {
-            newMenuItem = [[NSMenuItem alloc] initWithTitle:@"Post to Instacodes" action:NULL keyEquivalent:nil];
-            NSMenu * browsersMenu = [[NSMenu alloc] initWithTitle:@"Post to Instacodes"];
+            newMenuItem = [[NSMenuItem alloc] initWithTitle:kMenuItemTitle action:NULL keyEquivalent:@""];
+            [newMenuItem setTarget:self];
+            NSMenu * browsersMenu = [[NSMenu alloc] initWithTitle:kMenuItemTitle];
             
             for (NSString *browserID in browsers)
             {
                 NSString *itemTitle = [NSString stringWithFormat:@"Post using %@", [[[browserID componentsSeparatedByString:@"."] lastObject] capitalizedString]];
-                NSMenuItem * browserMenuItem = [[NSMenuItem alloc] initWithTitle:itemTitle action:@selector(postToInstacodes:) keyEquivalent:nil];
+                NSMenuItem * browserMenuItem = [[NSMenuItem alloc] initWithTitle:itemTitle action:@selector(postToInstacodes:) keyEquivalent:@""];
                 [browserMenuItem setTarget:self];
                 [browserMenuItem setRepresentedObject:browserID];
                 [browsersMenu addItem:browserMenuItem];
             }
             
             [newMenuItem setSubmenu:browsersMenu];
-            
         }
-        
+    
         [[editMenuItem submenu] addItem:newMenuItem];
         [newMenuItem release];
     }
@@ -121,21 +124,23 @@ NSString * const kBrowserBundleIDSafari = @"com.apple.Safari";
     {
         [[NSAlert alertWithMessageText:@"No browsers" defaultButton:@"OK" alternateButton:nil otherButton:nil
             informativeTextWithFormat:@"No WebGL supporting browsers installed on your system"] runModal];
-        return;
     }
-    
-    NSString * postCode = [self.currentSelection URLEncodedString];
-    NSString * URLString = [NSString stringWithFormat:@"http://instacod.es/?post_code=%@&post_lang=%@", postCode, @"ObjC"];
-    
-    [[NSWorkspace sharedWorkspace] openURLs:@[[NSURL URLWithString:URLString]] withAppBundleIdentifier:browserID
-        options:NSWorkspaceLaunchDefault additionalEventParamDescriptor:nil launchIdentifiers:NULL];
+    else
+    {
+        NSString * postCode = [self.currentSelection URLEncodedString];
+        NSString * URLString = [NSString stringWithFormat:@"http://instacod.es/?post_code=%@&post_lang=%@", postCode, @"ObjC"];
+        
+        [[NSWorkspace sharedWorkspace] openURLs:@[[NSURL URLWithString:URLString]] withAppBundleIdentifier:browserID
+            options:NSWorkspaceLaunchDefault additionalEventParamDescriptor:nil launchIdentifiers:NULL];
+    }
 }
 
 #pragma mark
 
 - (NSArray *)installedBrowsers
 {
-    NSMutableArray * browsers = [NSMutableArray arrayWithObjects:kBrowserBundleIDSafari, kBrowserBundleIDChrome, kBrowserBundleIDFirefox, nil];
+    NSMutableArray * browsers = [NSMutableArray arrayWithObjects:kBrowserBundleIDSafari, kBrowserBundleIDChrome,
+        kBrowserBundleIDFirefox,/* kBrowserBundleIDOpera ,*/ nil];
     NSWorkspace * workspace = [NSWorkspace sharedWorkspace];
     
     for (NSString * browserID in browsers)
