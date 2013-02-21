@@ -12,14 +12,14 @@
 
 //==============================================================================================================================================================
 
-NSString * const kBrowserBundleIDFirefox = @"org.mozilla.firefox";
-NSString * const kBrowserBundleIDChrome = @"com.google.Chrome";
 NSString * const kBrowserBundleIDSafari = @"com.apple.Safari";
+NSString * const kBrowserBundleIDChrome = @"com.google.Chrome";
+NSString * const kBrowserBundleIDFirefox = @"org.mozilla.firefox";
 NSString * const kBrowserBundleIDOpera = @"com.operasoftware.Opera";
 
 NSString * const kSafariPrefsWebGLSupportKey = @"WebKitWebGLEnabled";
 
-NSString * const kMenuItemTitle = @"Post to Instacode";
+NSString * const kMenuItemTitle = @"Post Selection to Instacode";
 
 //==============================================================================================================================================================
 
@@ -28,6 +28,7 @@ NSString * const kMenuItemTitle = @"Post to Instacode";
 @property (strong) NSString *currentSelection;
 
 - (NSArray *)installedBrowsers;
+- (void)debugAlertWithMessage:(NSString *)message;
 
 @end
 
@@ -80,7 +81,6 @@ NSString * const kMenuItemTitle = @"Post to Instacode";
         else
         {
             newMenuItem = [[NSMenuItem alloc] initWithTitle:kMenuItemTitle action:NULL keyEquivalent:@""];
-            [newMenuItem setTarget:self];
             NSMenu * browsersMenu = [[NSMenu alloc] initWithTitle:kMenuItemTitle];
             
             for (NSString *browserID in browsers)
@@ -179,6 +179,13 @@ NSString * const kMenuItemTitle = @"Post to Instacode";
     }
     
     return browsers;
+}
+
+- (void)debugAlertWithMessage:(NSString *)message
+{
+#ifdef DEBUG
+    [[NSAlert alertWithMessageText:@"Debug alert" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", message] runModal];
+#endif
 }
 
 @end
