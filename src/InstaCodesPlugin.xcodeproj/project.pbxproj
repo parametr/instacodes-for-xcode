@@ -248,7 +248,9 @@
 				GCC_PREFIX_HEADER = "InstaCodesPlugin/InstaCodesPlugin-Prefix.pch";
 				INFOPLIST_FILE = "InstaCodesPlugin/InstaCodesPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Debug;
@@ -265,7 +267,9 @@
 				GCC_PREFIX_HEADER = "InstaCodesPlugin/InstaCodesPlugin-Prefix.pch";
 				INFOPLIST_FILE = "InstaCodesPlugin/InstaCodesPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Release;

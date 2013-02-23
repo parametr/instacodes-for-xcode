@@ -138,7 +138,8 @@ NSString * const kMenuItemTitle = @"Post Selection to Instacode";
         if ([browserID isEqualToString:kBrowserBundleIDSafari])
         {
             // Check if Safari supports WebGL
-            BOOL supportsWebGL = [[[NSUserDefaults standardUserDefaults] persistentDomainForName:kBrowserBundleIDSafari][kSafariPrefsWebGLSupportKey] boolValue];
+            BOOL supportsWebGL = [[[[NSUserDefaults standardUserDefaults] persistentDomainForName:kBrowserBundleIDSafari]
+                objectForKey:kSafariPrefsWebGLSupportKey] boolValue];
             
             if (!supportsWebGL)
             {
