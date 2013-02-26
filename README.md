@@ -1,10 +1,10 @@
-# Instacode plug-in for Xcode
+## Description
 
 This plug-in allows developers to post code fragments directly from Xcode IDE to [Instacode](http://instacod.es) - an Instagram for your code.
 It supports OS X 10.7 and higher + Xcode 4.x.
 
 ## Download and Install
-Download the plug-in [here](https://www.dropbox.com/s/66ww696dzxkk1a9/InstaCodesPlugin.xcplugin.zip), unzip and put into
+[Download the plug-in](https://s3.amazonaws.com/ProductBuilds/InstaCodesPlugin.xcplugin.zip), unzip and put into
 `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins`. Restart the Xcode to load the plug-in.
 
 ## Use It to Post Your Code
