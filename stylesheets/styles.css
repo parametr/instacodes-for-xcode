@@ -752,6 +752,28 @@ dt {
   display: inline-block;
   text-align: center;
 }
+
+#header nav li a.binary {
+    border: 1px solid #c1862f;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f2b534), color-stop(100%, #d4890e));
+    background: -webkit-linear-gradient(#f2b534, #d4890e);
+    background: -moz-linear-gradient(#f2b534, #d4890e);
+    background: -o-linear-gradient(#f2b534, #d4890e);
+    background: -ms-linear-gradient(#f2b534, #d4890e);
+    background: linear-gradient(#f2b534, #d4890e);
+}
+
+#header nav li a.binary:hover {
+    border: 1px solid #95602b;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c18a34), color-stop(100%, #965611));
+    background: -webkit-linear-gradient(#c18a34, #965611);
+    background: -moz-linear-gradient(#c18a34, #965611);
+    background: -o-linear-gradient(#c18a34, #965611);
+    background: -ms-linear-gradient(#c18a34, #965611);
+    background: linear-gradient(#c18a34, #965611);
+
+}
+
 #header nav li a:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #749619), color-stop(100%, #527f0e));
   background: -webkit-linear-gradient(#749619, #527f0e);
