@@ -5,34 +5,20 @@
 //  Created by Eugene Kolpakov on 13. 2. 15..
 //  Copyright (c) 2013년 Eugene Kolpakov. All rights reserved.
 //
-//==============================================================================================================================================================
+//
 
 #import "ICPMainController.h"
 #import "NSString+WebExtensions.h"
 
-//==============================================================================================================================================================
-
-NSString * const kBrowserBundleIDSafari = @"com.apple.Safari";
-NSString * const kBrowserBundleIDChrome = @"com.google.Chrome";
-NSString * const kBrowserBundleIDFirefox = @"org.mozilla.firefox";
-NSString * const kBrowserBundleIDOpera = @"com.operasoftware.Opera";
-
-NSString * const kSafariPrefsWebGLSupportKey = @"WebKitWebGLEnabled";
-
 NSString * const kMenuItemTitle = @"Post Selection to Instacode";
-
-//==============================================================================================================================================================
 
 @interface ICPMainController ()
 
 @property (strong) NSString *currentSelection;
 
-- (NSArray *)installedBrowsers;
 - (void)debugAlertWithMessage:(NSString *)message;
 
 @end
-
-//==============================================================================================================================================================
 
 @implementation ICPMainController
 
@@ -69,7 +55,6 @@ NSString * const kMenuItemTitle = @"Post Selection to Instacode";
     {
         [[editMenuItem submenu] addItem:[NSMenuItem separatorItem]];
         
-        NSArray * browsers = [self installedBrowsers];
         NSMenuItem * newMenuItem = nil;
         newMenuItem = [[NSMenuItem alloc] initWithTitle:kMenuItemTitle action:NULL keyEquivalent:@""];
         [newMenuItem setTarget:self];
@@ -104,7 +89,7 @@ NSString * const kMenuItemTitle = @"Post Selection to Instacode";
     NSString * postCode = [self.currentSelection URLEncodedString];
     NSString * URLString = [NSString stringWithFormat:@"http://instacod.es/?post_code=%@&post_lang=%@", postCode, @"ObjC"];
     
-    [[NSWorkspace sharedWorkspace] openURL:@[[NSURL URLWithString:URLString]]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:URLString]];
 }
 
 - (void)debugAlertWithMessage:(NSString *)message
