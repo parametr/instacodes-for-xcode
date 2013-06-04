@@ -24,7 +24,7 @@
          <li class="fork"><a href="https://github.com/parametr/instacodes-for-xcode">View On GitHub</a></li>
          <!-- <li class="downloads"><a href="https://github.com/parametr/instacodes-for-xcode/zipball/master">ZIP</a></li> -->
          <li class="downloads"><a href="https://github.com/parametr/instacodes-for-xcode/tarball/master">Source Code (TAR)</a></li>
-         <li class="downloads"><a class="binary" href="https://s3.amazonaws.com/ProductBuilds/InstaCodesPlugin.xcplugin.zip">Plug-In (ZIP)</a></li>
+         <li class="downloads"><a class="binary" href="https://s3.amazonaws.com/ProductBuilds/InstaCodesPlugin.xcplugin.zip" data-category="My Outbound Links" data-action="Download plug-in binary">Plug-In (ZIP)</a></li>
          <li class="title">DOWNLOADS</li>
        </nav>
      </div><!-- end header -->
@@ -47,7 +47,7 @@
 
 		<h2>Download and Install</h2>
 
-		<p><a href="https://s3.amazonaws.com/ProductBuilds/InstaCodesPlugin.xcplugin.zip">Download the plug-in</a>, unzip and put into
+		<p><a class="binary" href="https://s3.amazonaws.com/ProductBuilds/InstaCodesPlugin.xcplugin.zip" data-category="My Outbound Links" data-action="Download plug-in binary">Download the plug-in</a>, unzip and put into
 		<code>~/Library/Application Support/Developer/Shared/Xcode/Plug-ins</code>. Restart the Xcode to load the plug-in.</p>
 
 		<h2>Use It to Post Your Code</h2>
@@ -64,20 +64,68 @@
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
 
-      <script type="text/javascript">
+    <script type="text/javascript">
 
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-38786826-1']);
-        _gaq.push(['_setDomainName', 'github.io']);
-        _gaq.push(['_setAllowLinker', true]);
-        _gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38786826-1']);
+      _gaq.push(['_setDomainName', 'github.io']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
 
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-      </script>
+    </script>
+
+    <script type="text/javascript">
+        // Create function that pushes a "trackEvent" to google
+        // and then redirects to the given destination
+        function trackOutboundLink(destination, category, action) {
+            try { 
+                _gaq.push(['_trackEvent', category , action]); 
+            } catch(err){
+                // We'll just log any errors to the console for now
+                console.error(err)
+            }
+
+            // Add slight delay so _trackEvent can register
+            setTimeout(function() {
+                // then redirect to the given destination
+                document.location.href = destination;
+            }, 100);
+        }
+
+        function setupOutboundLinks() {
+            // Use the new 'querySelectorAll' method to get any outbound links
+            // 'querySelectorAll' works in all modern browsers (everything except IE7 or before), so if you need older browser support
+            // you'd need to use document.getElementsByTagName('a') and then filter them to check the URL is 'outbound'
+            var outBoundLinks = document.querySelectorAll('a.binary');
+
+            // Loop through all outbound links
+            for (var i = outBoundLinks.length - 1; i >= 0; i--) {
+                // Add click event listeners for anchor element
+                outBoundLinks[i].addEventListener("click", function(event) {
+                    // Prevent the browser from executing the hyperlink
+                    event.preventDefault();
+
+                    // Get the required attributes
+                    var destination = this.href,
+                            category    = this.getAttribute("data-category") || "default category",
+                            action      = this.getAttribute("data-action") || "default action";
+
+                    // Call trackOutboundLink() that pushes the trackEvent and 
+                    // redirects to the destination.
+                    trackOutboundLink(destination, category, action);
+                })
+            };
+        }
+
+        // call setupOutboundLinks() when then page is loaded
+        window.onload = setupOutboundLinks;
+    </script>
+
   </body>
 </html>
