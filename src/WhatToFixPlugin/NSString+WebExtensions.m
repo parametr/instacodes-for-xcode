@@ -15,12 +15,12 @@
 
 - (NSString *)URLEncodedString
 {
-    CFStringRef originalString = (CFStringRef)self;
+    CFStringRef originalString = (__bridge CFStringRef)self;
     CFStringRef charactersToBeEscaped = CFSTR("!#$%&'()*+,/:;=?@[]^{}<>` ");
 
     CFStringRef URLEncodedString = CFURLCreateStringByAddingPercentEscapes(NULL, originalString, NULL, charactersToBeEscaped, kCFStringEncodingUTF8);
 
-    return [(NSString *)URLEncodedString autorelease];
+    return (__bridge NSString *)URLEncodedString;
 }
 
 @end
