@@ -163,8 +163,9 @@
 		A83DF69D1B0CAA9600C4EA0B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WTF;
 				LastUpgradeCheck = 0630;
-				ORGANIZATIONNAME = "Joachim Kurz";
+				ORGANIZATIONNAME = "What To Fix";
 				TargetAttributes = {
 					A83DF6A41B0CAA9600C4EA0B = {
 						CreatedOnToolsVersion = 6.3.2;
