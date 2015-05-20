@@ -69,31 +69,10 @@ NSString * const kMenuItemTitle = @"Post Selection to Instacode";
     {
         [[editMenuItem submenu] addItem:[NSMenuItem separatorItem]];
         
-        NSArray * browsers = [self installedBrowsers];
-        NSMenuItem * newMenuItem = nil;
+        NSString *itemTitle = @"Create new WhatToFix";
+        NSMenuItem *newMenuItem = [[NSMenuItem alloc] initWithTitle:itemTitle action:@selector(postToInstacodes:) keyEquivalent:@""];
         
-        if ([browsers count] < 2)
-        {
-            newMenuItem = [[NSMenuItem alloc] initWithTitle:kMenuItemTitle action:NULL keyEquivalent:@""];
-            [newMenuItem setTarget:self];
-            [newMenuItem setRepresentedObject:[browsers lastObject]];
-        }
-        else
-        {
-            newMenuItem = [[NSMenuItem alloc] initWithTitle:kMenuItemTitle action:NULL keyEquivalent:@""];
-            NSMenu * browsersMenu = [[NSMenu alloc] initWithTitle:kMenuItemTitle];
-            
-            for (NSString *browserID in browsers)
-            {
-                NSString *itemTitle = [NSString stringWithFormat:@"Post using %@", [[[browserID componentsSeparatedByString:@"."] lastObject] capitalizedString]];
-                NSMenuItem * browserMenuItem = [[NSMenuItem alloc] initWithTitle:itemTitle action:@selector(postToInstacodes:) keyEquivalent:@""];
-                [browserMenuItem setTarget:self];
-                [browserMenuItem setRepresentedObject:browserID];
-                [browsersMenu addItem:browserMenuItem];
-            }
-            
-            [newMenuItem setSubmenu:browsersMenu];
-        }
+        [newMenuItem setTarget:self];
     
         [[editMenuItem submenu] addItem:newMenuItem];
         [newMenuItem release];
