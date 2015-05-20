@@ -7,25 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EFD8C71C16CE2DFE006E0CF7 /* NSString+WebExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD8C71B16CE2DFE006E0CF7 /* NSString+WebExtensions.m */; };
+		348AA9491B0CA93F00CC0856 /* WTFItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 348AA9481B0CA93F00CC0856 /* WTFItem.m */; };
+		348AA94D1B0CA97500CC0856 /* NSArray+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 348AA94C1B0CA97500CC0856 /* NSArray+Utilities.m */; };
+		A81F53991B0CA4B800222E2F /* ICPMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81F53981B0CA4B800222E2F /* ICPMainController.m */; };
+		A81F539F1B0CA4C400222E2F /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A81F539A1B0CA4C400222E2F /* en.lproj */; };
+		A81F53A01B0CA4C400222E2F /* WhatToFixPlugin-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81F539B1B0CA4C400222E2F /* WhatToFixPlugin-Info.plist */; };
+		A81F53A11B0CA4C400222E2F /* NSString+WebExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A81F539E1B0CA4C400222E2F /* NSString+WebExtensions.m */; };
 		EFE4EDE216CE1F5A004CC72A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE4EDE116CE1F5A004CC72A /* Cocoa.framework */; };
-		EFE4EDEC16CE1F5A004CC72A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFE4EDEA16CE1F5A004CC72A /* InfoPlist.strings */; };
-		EFE4EDF516CE20A6004CC72A /* ICPMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE4EDF416CE20A6004CC72A /* ICPMainController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EFD8C71A16CE2DFE006E0CF7 /* NSString+WebExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WebExtensions.h"; sourceTree = "<group>"; };
-		EFD8C71B16CE2DFE006E0CF7 /* NSString+WebExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WebExtensions.m"; sourceTree = "<group>"; };
-		EFE4EDDE16CE1F5A004CC72A /* InstaCodesPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaCodesPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		348AA9471B0CA93F00CC0856 /* WTFItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFItem.h; sourceTree = SOURCE_ROOT; };
+		348AA9481B0CA93F00CC0856 /* WTFItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFItem.m; sourceTree = SOURCE_ROOT; };
+		348AA94B1B0CA97500CC0856 /* NSArray+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Utilities.h"; sourceTree = SOURCE_ROOT; };
+		348AA94C1B0CA97500CC0856 /* NSArray+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Utilities.m"; sourceTree = SOURCE_ROOT; };
+		A81F53971B0CA4B800222E2F /* ICPMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICPMainController.h; path = WhatToFixPlugin/ICPMainController.h; sourceTree = SOURCE_ROOT; };
+		A81F53981B0CA4B800222E2F /* ICPMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICPMainController.m; path = WhatToFixPlugin/ICPMainController.m; sourceTree = SOURCE_ROOT; };
+		A81F539A1B0CA4C400222E2F /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en.lproj; path = WhatToFixPlugin/en.lproj; sourceTree = SOURCE_ROOT; };
+		A81F539B1B0CA4C400222E2F /* WhatToFixPlugin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WhatToFixPlugin-Info.plist"; path = "WhatToFixPlugin/WhatToFixPlugin-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A81F539C1B0CA4C400222E2F /* WhatToFixPlugin-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WhatToFixPlugin-Prefix.pch"; path = "WhatToFixPlugin/WhatToFixPlugin-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		A81F539D1B0CA4C400222E2F /* NSString+WebExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+WebExtensions.h"; path = "WhatToFixPlugin/NSString+WebExtensions.h"; sourceTree = SOURCE_ROOT; };
+		A81F539E1B0CA4C400222E2F /* NSString+WebExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+WebExtensions.m"; path = "WhatToFixPlugin/NSString+WebExtensions.m"; sourceTree = SOURCE_ROOT; };
+		EFE4EDDE16CE1F5A004CC72A /* WhatToFixPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatToFixPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE4EDE116CE1F5A004CC72A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EFE4EDE416CE1F5A004CC72A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		EFE4EDE516CE1F5A004CC72A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EFE4EDE616CE1F5A004CC72A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		EFE4EDE916CE1F5A004CC72A /* InstaCodesPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaCodesPlugin-Info.plist"; sourceTree = "<group>"; };
-		EFE4EDEB16CE1F5A004CC72A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EFE4EDED16CE1F5A004CC72A /* InstaCodesPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaCodesPlugin-Prefix.pch"; sourceTree = "<group>"; };
-		EFE4EDF316CE20A6004CC72A /* ICPMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPMainController.h; sourceTree = "<group>"; };
-		EFE4EDF416CE20A6004CC72A /* ICPMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPMainController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,10 +47,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		348AA9461B0CA93800CC0856 /* WTF */ = {
+			isa = PBXGroup;
+			children = (
+				348AA9471B0CA93F00CC0856 /* WTFItem.h */,
+				348AA9481B0CA93F00CC0856 /* WTFItem.m */,
+			);
+			name = WTF;
+			sourceTree = "<group>";
+		};
+		348AA94A1B0CA96500CC0856 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				348AA94B1B0CA97500CC0856 /* NSArray+Utilities.h */,
+				348AA94C1B0CA97500CC0856 /* NSArray+Utilities.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		EFE4EDD516CE1F5A004CC72A = {
 			isa = PBXGroup;
 			children = (
-				EFE4EDE716CE1F5A004CC72A /* InstaCodesPlugin */,
+				EFE4EDE716CE1F5A004CC72A /* WhatToFixPlugin */,
 				EFE4EDE016CE1F5A004CC72A /* Frameworks */,
 				EFE4EDDF16CE1F5A004CC72A /* Products */,
 			);
@@ -52,7 +77,7 @@
 		EFE4EDDF16CE1F5A004CC72A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EFE4EDDE16CE1F5A004CC72A /* InstaCodesPlugin.xcplugin */,
+				EFE4EDDE16CE1F5A004CC72A /* WhatToFixPlugin.xcplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,24 +101,27 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		EFE4EDE716CE1F5A004CC72A /* InstaCodesPlugin */ = {
+		EFE4EDE716CE1F5A004CC72A /* WhatToFixPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				348AA94A1B0CA96500CC0856 /* Categories */,
+				348AA9461B0CA93800CC0856 /* WTF */,
+				A81F53971B0CA4B800222E2F /* ICPMainController.h */,
+				A81F53981B0CA4B800222E2F /* ICPMainController.m */,
 				EFE4EDE816CE1F5A004CC72A /* Supporting Files */,
-				EFE4EDF316CE20A6004CC72A /* ICPMainController.h */,
-				EFE4EDF416CE20A6004CC72A /* ICPMainController.m */,
 			);
+			name = WhatToFixPlugin;
 			path = InstaCodesPlugin;
 			sourceTree = "<group>";
 		};
 		EFE4EDE816CE1F5A004CC72A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EFE4EDE916CE1F5A004CC72A /* InstaCodesPlugin-Info.plist */,
-				EFE4EDEA16CE1F5A004CC72A /* InfoPlist.strings */,
-				EFE4EDED16CE1F5A004CC72A /* InstaCodesPlugin-Prefix.pch */,
-				EFD8C71A16CE2DFE006E0CF7 /* NSString+WebExtensions.h */,
-				EFD8C71B16CE2DFE006E0CF7 /* NSString+WebExtensions.m */,
+				A81F539A1B0CA4C400222E2F /* en.lproj */,
+				A81F539B1B0CA4C400222E2F /* WhatToFixPlugin-Info.plist */,
+				A81F539C1B0CA4C400222E2F /* WhatToFixPlugin-Prefix.pch */,
+				A81F539D1B0CA4C400222E2F /* NSString+WebExtensions.h */,
+				A81F539E1B0CA4C400222E2F /* NSString+WebExtensions.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -101,9 +129,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EFE4EDDD16CE1F5A004CC72A /* InstaCodesPlugin */ = {
+		EFE4EDDD16CE1F5A004CC72A /* WhatToFixPlugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EFE4EDF016CE1F5A004CC72A /* Build configuration list for PBXNativeTarget "InstaCodesPlugin" */;
+			buildConfigurationList = EFE4EDF016CE1F5A004CC72A /* Build configuration list for PBXNativeTarget "WhatToFixPlugin" */;
 			buildPhases = (
 				EFE4EDDA16CE1F5A004CC72A /* Sources */,
 				EFE4EDDB16CE1F5A004CC72A /* Frameworks */,
@@ -113,9 +141,9 @@
 			);
 			dependencies = (
 			);
-			name = InstaCodesPlugin;
+			name = WhatToFixPlugin;
 			productName = InstaCodesPlugin;
-			productReference = EFE4EDDE16CE1F5A004CC72A /* InstaCodesPlugin.xcplugin */;
+			productReference = EFE4EDDE16CE1F5A004CC72A /* WhatToFixPlugin.xcplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +155,7 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Eugene Kolpakov";
 			};
-			buildConfigurationList = EFE4EDD916CE1F5A004CC72A /* Build configuration list for PBXProject "InstaCodesPlugin" */;
+			buildConfigurationList = EFE4EDD916CE1F5A004CC72A /* Build configuration list for PBXProject "WhatToFixPlugin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -139,7 +167,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EFE4EDDD16CE1F5A004CC72A /* InstaCodesPlugin */,
+				EFE4EDDD16CE1F5A004CC72A /* WhatToFixPlugin */,
 			);
 		};
 /* End PBXProject section */
@@ -149,7 +177,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFE4EDEC16CE1F5A004CC72A /* InfoPlist.strings in Resources */,
+				A81F539F1B0CA4C400222E2F /* en.lproj in Resources */,
+				A81F53A01B0CA4C400222E2F /* WhatToFixPlugin-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,23 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFE4EDF516CE20A6004CC72A /* ICPMainController.m in Sources */,
-				EFD8C71C16CE2DFE006E0CF7 /* NSString+WebExtensions.m in Sources */,
+				348AA9491B0CA93F00CC0856 /* WTFItem.m in Sources */,
+				348AA94D1B0CA97500CC0856 /* NSArray+Utilities.m in Sources */,
+				A81F53991B0CA4B800222E2F /* ICPMainController.m in Sources */,
+				A81F53A11B0CA4C400222E2F /* NSString+WebExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		EFE4EDEA16CE1F5A004CC72A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EFE4EDEB16CE1F5A004CC72A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EFE4EDEE16CE1F5A004CC72A /* Debug */ = {
@@ -237,13 +257,14 @@
 		EFE4EDF116CE1F5A004CC72A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InstaCodesPlugin/InstaCodesPlugin-Prefix.pch";
-				INFOPLIST_FILE = "InstaCodesPlugin/InstaCodesPlugin-Info.plist";
+				GCC_PREFIX_HEADER = "WhatToFixPlugin/WhatToFixPlugin-Prefix.pch";
+				INFOPLIST_FILE = "WhatToFixPlugin/WhatToFixPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -255,13 +276,14 @@
 		EFE4EDF216CE1F5A004CC72A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InstaCodesPlugin/InstaCodesPlugin-Prefix.pch";
-				INFOPLIST_FILE = "InstaCodesPlugin/InstaCodesPlugin-Info.plist";
+				GCC_PREFIX_HEADER = "WhatToFixPlugin/WhatToFixPlugin-Prefix.pch";
+				INFOPLIST_FILE = "WhatToFixPlugin/WhatToFixPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,7 +295,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EFE4EDD916CE1F5A004CC72A /* Build configuration list for PBXProject "InstaCodesPlugin" */ = {
+		EFE4EDD916CE1F5A004CC72A /* Build configuration list for PBXProject "WhatToFixPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EFE4EDEE16CE1F5A004CC72A /* Debug */,
@@ -282,7 +304,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EFE4EDF016CE1F5A004CC72A /* Build configuration list for PBXNativeTarget "InstaCodesPlugin" */ = {
+		EFE4EDF016CE1F5A004CC72A /* Build configuration list for PBXNativeTarget "WhatToFixPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EFE4EDF116CE1F5A004CC72A /* Debug */,
