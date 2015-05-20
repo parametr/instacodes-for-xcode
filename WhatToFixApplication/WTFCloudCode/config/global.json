@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "WTF": {
+      "applicationId": "gpPHmJMGlgsS1Tlb2WKdcB9gq0nB35WXo1uH21qk",
+      "masterKey": "xDUvi2ZIKhP243EYnft5aRdMOSyn2rQO8T1QbOd9"
+    },
+    "_default": {
+      "link": "WTF"
+    }
+  }
+}
