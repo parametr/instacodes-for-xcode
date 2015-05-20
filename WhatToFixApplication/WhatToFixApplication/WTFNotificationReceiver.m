@@ -20,7 +20,9 @@
 - (void)awakeFromNib
 {
     self.operationQueue = [NSOperationQueue mainQueue];
-    [[NSDistributedNotificationCenter defaultCenter] addObserverForName:WTFNewNotificationKey object:nil queue:<#(NSOperationQueue *)#> usingBlock:<#^(NSNotification *note)block#>]
+    [[NSDistributedNotificationCenter defaultCenter] addObserverForName:WTFNewNotificationKey object:nil queue:self.operationQueue usingBlock:^(NSNotification *note) {
+        NSLog(@"received notification: %@", note);
+    }];
 }
 
 @end
