@@ -14,6 +14,8 @@
 		A83DF6B61B0CAA9600C4EA0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83DF6B51B0CAA9600C4EA0B /* Images.xcassets */; };
 		A83DF6B91B0CAA9600C4EA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83DF6B71B0CAA9600C4EA0B /* Main.storyboard */; };
 		A83DF6C51B0CAA9600C4EA0B /* WhatToFixApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF6C41B0CAA9600C4EA0B /* WhatToFixApplicationTests.m */; };
+		A83DF6D01B0CADAD00C4EA0B /* WTFNotificationReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF6CF1B0CADAD00C4EA0B /* WTFNotificationReceiver.m */; };
+		A83DF6D31B0CAE8D00C4EA0B /* WTFSharedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF6D21B0CAE8D00C4EA0B /* WTFSharedConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		A83DF6BE1B0CAA9600C4EA0B /* WhatToFixApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatToFixApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83DF6C31B0CAA9600C4EA0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A83DF6C41B0CAA9600C4EA0B /* WhatToFixApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhatToFixApplicationTests.m; sourceTree = "<group>"; };
+		A83DF6CE1B0CADAD00C4EA0B /* WTFNotificationReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFNotificationReceiver.h; sourceTree = "<group>"; };
+		A83DF6CF1B0CADAD00C4EA0B /* WTFNotificationReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFNotificationReceiver.m; sourceTree = "<group>"; };
+		A83DF6D11B0CAE8D00C4EA0B /* WTFSharedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFSharedConstants.h; sourceTree = "<group>"; };
+		A83DF6D21B0CAE8D00C4EA0B /* WTFSharedConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFSharedConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +91,14 @@
 				A83DF6AB1B0CAA9600C4EA0B /* AppDelegate.m */,
 				A83DF6AF1B0CAA9600C4EA0B /* ViewController.h */,
 				A83DF6B01B0CAA9600C4EA0B /* ViewController.m */,
+				A83DF6CE1B0CADAD00C4EA0B /* WTFNotificationReceiver.h */,
+				A83DF6CF1B0CADAD00C4EA0B /* WTFNotificationReceiver.m */,
 				A83DF6B51B0CAA9600C4EA0B /* Images.xcassets */,
 				A83DF6B71B0CAA9600C4EA0B /* Main.storyboard */,
 				A83DF6B21B0CAA9600C4EA0B /* WhatToFixApplication.xcdatamodeld */,
 				A83DF6A81B0CAA9600C4EA0B /* Supporting Files */,
+				A83DF6D11B0CAE8D00C4EA0B /* WTFSharedConstants.h */,
+				A83DF6D21B0CAE8D00C4EA0B /* WTFSharedConstants.m */,
 			);
 			path = WhatToFixApplication;
 			sourceTree = "<group>";
@@ -219,7 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83DF6D31B0CAE8D00C4EA0B /* WTFSharedConstants.m in Sources */,
 				A83DF6B11B0CAA9600C4EA0B /* ViewController.m in Sources */,
+				A83DF6D01B0CADAD00C4EA0B /* WTFNotificationReceiver.m in Sources */,
 				A83DF6B41B0CAA9600C4EA0B /* WhatToFixApplication.xcdatamodeld in Sources */,
 				A83DF6AE1B0CAA9600C4EA0B /* main.m in Sources */,
 				A83DF6AC1B0CAA9600C4EA0B /* AppDelegate.m in Sources */,
