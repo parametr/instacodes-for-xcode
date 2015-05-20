@@ -109,7 +109,10 @@ NSString * const kMenuItemTitle = @"Post Selection to Instacode";
 - (void)postWTF:(id)sender
 {
   WTFItem* item = [[WTFItem alloc] initWithDocumentLocation:[self.lastEditor valueForKey:@"_documentLocationUnderMouse"] text:[self.lastEditor valueForKey:@"selectedText"]];
-    [[NSDistributedNotificationCenter defaultCenter] postNotificationName:WTFNewNotificationKey object:@"WTFPlugin" userInfo:@{@"start:" : [item.documentLocation valueForKey:@"startingColumnNumber"]}];
+    [[NSDistributedNotificationCenter defaultCenter] postNotificationName:WTFNewNotificationKey
+                                                                   object:@"WTFPlugin"
+                                                                 userInfo:@{@"start:" : [item.documentLocation valueForKey:@"startingColumnNumber"]}
+                                                       deliverImmediately:YES];
   NSLog(@"item");
 }
 
