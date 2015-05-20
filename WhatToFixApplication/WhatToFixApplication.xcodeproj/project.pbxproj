@@ -15,7 +15,7 @@
 		A83DF6B91B0CAA9600C4EA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83DF6B71B0CAA9600C4EA0B /* Main.storyboard */; };
 		A83DF6C51B0CAA9600C4EA0B /* WhatToFixApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF6C41B0CAA9600C4EA0B /* WhatToFixApplicationTests.m */; };
 		A83DF6D01B0CADAD00C4EA0B /* WTFNotificationReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF6CF1B0CADAD00C4EA0B /* WTFNotificationReceiver.m */; };
-		A83DF6D31B0CAE8D00C4EA0B /* WTFSharedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF6D21B0CAE8D00C4EA0B /* WTFSharedConstants.m */; };
+		A83DF6D91B0CB39900C4EA0B /* WTFSharedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF6D81B0CB39900C4EA0B /* WTFSharedConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,8 @@
 		A83DF6C41B0CAA9600C4EA0B /* WhatToFixApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhatToFixApplicationTests.m; sourceTree = "<group>"; };
 		A83DF6CE1B0CADAD00C4EA0B /* WTFNotificationReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFNotificationReceiver.h; sourceTree = "<group>"; };
 		A83DF6CF1B0CADAD00C4EA0B /* WTFNotificationReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFNotificationReceiver.m; sourceTree = "<group>"; };
-		A83DF6D11B0CAE8D00C4EA0B /* WTFSharedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFSharedConstants.h; sourceTree = "<group>"; };
-		A83DF6D21B0CAE8D00C4EA0B /* WTFSharedConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFSharedConstants.m; sourceTree = "<group>"; };
+		A83DF6D71B0CB39900C4EA0B /* WTFSharedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTFSharedConstants.h; path = ../../Shared/WTFSharedConstants.h; sourceTree = "<group>"; };
+		A83DF6D81B0CB39900C4EA0B /* WTFSharedConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTFSharedConstants.m; path = ../../Shared/WTFSharedConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +87,8 @@
 		A83DF6A71B0CAA9600C4EA0B /* WhatToFixApplication */ = {
 			isa = PBXGroup;
 			children = (
+				A83DF6D71B0CB39900C4EA0B /* WTFSharedConstants.h */,
+				A83DF6D81B0CB39900C4EA0B /* WTFSharedConstants.m */,
 				A83DF6AA1B0CAA9600C4EA0B /* AppDelegate.h */,
 				A83DF6AB1B0CAA9600C4EA0B /* AppDelegate.m */,
 				A83DF6AF1B0CAA9600C4EA0B /* ViewController.h */,
@@ -97,8 +99,6 @@
 				A83DF6B71B0CAA9600C4EA0B /* Main.storyboard */,
 				A83DF6B21B0CAA9600C4EA0B /* WhatToFixApplication.xcdatamodeld */,
 				A83DF6A81B0CAA9600C4EA0B /* Supporting Files */,
-				A83DF6D11B0CAE8D00C4EA0B /* WTFSharedConstants.h */,
-				A83DF6D21B0CAE8D00C4EA0B /* WTFSharedConstants.m */,
 			);
 			path = WhatToFixApplication;
 			sourceTree = "<group>";
@@ -229,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A83DF6D31B0CAE8D00C4EA0B /* WTFSharedConstants.m in Sources */,
+				A83DF6D91B0CB39900C4EA0B /* WTFSharedConstants.m in Sources */,
 				A83DF6B11B0CAA9600C4EA0B /* ViewController.m in Sources */,
 				A83DF6D01B0CADAD00C4EA0B /* WTFNotificationReceiver.m in Sources */,
 				A83DF6B41B0CAA9600C4EA0B /* WhatToFixApplication.xcdatamodeld in Sources */,
@@ -424,6 +424,7 @@
 				A83DF6CA1B0CAA9600C4EA0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A83DF6CB1B0CAA9600C4EA0B /* Build configuration list for PBXNativeTarget "WhatToFixApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +433,7 @@
 				A83DF6CD1B0CAA9600C4EA0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

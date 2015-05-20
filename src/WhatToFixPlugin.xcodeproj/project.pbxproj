@@ -13,6 +13,7 @@
 		A81F539F1B0CA4C400222E2F /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A81F539A1B0CA4C400222E2F /* en.lproj */; };
 		A81F53A01B0CA4C400222E2F /* WhatToFixPlugin-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81F539B1B0CA4C400222E2F /* WhatToFixPlugin-Info.plist */; };
 		A81F53A11B0CA4C400222E2F /* NSString+WebExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A81F539E1B0CA4C400222E2F /* NSString+WebExtensions.m */; };
+		A83DF6DF1B0CB3B000C4EA0B /* WTFSharedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A83DF6DE1B0CB3B000C4EA0B /* WTFSharedConstants.m */; };
 		EFE4EDE216CE1F5A004CC72A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE4EDE116CE1F5A004CC72A /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		A81F539C1B0CA4C400222E2F /* WhatToFixPlugin-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WhatToFixPlugin-Prefix.pch"; path = "WhatToFixPlugin/WhatToFixPlugin-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		A81F539D1B0CA4C400222E2F /* NSString+WebExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+WebExtensions.h"; path = "WhatToFixPlugin/NSString+WebExtensions.h"; sourceTree = SOURCE_ROOT; };
 		A81F539E1B0CA4C400222E2F /* NSString+WebExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+WebExtensions.m"; path = "WhatToFixPlugin/NSString+WebExtensions.m"; sourceTree = SOURCE_ROOT; };
+		A83DF6DD1B0CB3B000C4EA0B /* WTFSharedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTFSharedConstants.h; path = ../../Shared/WTFSharedConstants.h; sourceTree = "<group>"; };
+		A83DF6DE1B0CB3B000C4EA0B /* WTFSharedConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTFSharedConstants.m; path = ../../Shared/WTFSharedConstants.m; sourceTree = "<group>"; };
 		EFE4EDDE16CE1F5A004CC72A /* WhatToFixPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatToFixPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE4EDE116CE1F5A004CC72A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EFE4EDE416CE1F5A004CC72A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -104,6 +107,8 @@
 		EFE4EDE716CE1F5A004CC72A /* WhatToFixPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				A83DF6DD1B0CB3B000C4EA0B /* WTFSharedConstants.h */,
+				A83DF6DE1B0CB3B000C4EA0B /* WTFSharedConstants.m */,
 				348AA94A1B0CA96500CC0856 /* Categories */,
 				348AA9461B0CA93800CC0856 /* WTF */,
 				A81F53971B0CA4B800222E2F /* ICPMainController.h */,
@@ -189,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83DF6DF1B0CB3B000C4EA0B /* WTFSharedConstants.m in Sources */,
 				348AA9491B0CA93F00CC0856 /* WTFItem.m in Sources */,
 				348AA94D1B0CA97500CC0856 /* NSArray+Utilities.m in Sources */,
 				A81F53991B0CA4B800222E2F /* ICPMainController.m in Sources */,

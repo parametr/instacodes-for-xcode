@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "WTFNotificationReceiver.h"
 
 @interface AppDelegate ()
+
+@property (strong) IBOutlet WTFNotificationReceiver *notificationReceiver;
 
 - (IBAction)saveAction:(id)sender;
 
