@@ -9,6 +9,8 @@
 
 #import "ICPMainController.h"
 #import "NSString+WebExtensions.h"
+#import "WTFItem.h"
+#import "WTFSharedConstants.h"
 
 //==============================================================================================================================================================
 
@@ -29,6 +31,8 @@ NSString * const kMenuItemTitle = @"Post Selection to Instacode";
 
 - (NSArray *)installedBrowsers;
 - (void)debugAlertWithMessage:(NSString *)message;
+
+@property (strong, nonatomic) id lastEditor;
 
 @end
 
@@ -62,6 +66,10 @@ NSString * const kMenuItemTitle = @"Post Selection to Instacode";
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectionDidChange:)
         name:NSTextViewDidChangeSelectionNotification object:nil];
+  __weak typeof (self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"DVTSourceExpressionSelectedExpressionDidChangeNotification" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+      weakSelf.lastEditor = note.object;
+    }];
     
     NSMenuItem * editMenuItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
     
@@ -69,34 +77,12 @@ NSString * const kMenuItemTitle = @"Post Selection to Instacode";
     {
         [[editMenuItem submenu] addItem:[NSMenuItem separatorItem]];
         
-        NSArray * browsers = [self installedBrowsers];
-        NSMenuItem * newMenuItem = nil;
+        NSString *itemTitle = @"Create new WhatToFix";
+        NSMenuItem *newMenuItem = [[NSMenuItem alloc] initWithTitle:itemTitle action:@selector(postWTF:) keyEquivalent:@""];
         
-        if ([browsers count] < 2)
-        {
-            newMenuItem = [[NSMenuItem alloc] initWithTitle:kMenuItemTitle action:NULL keyEquivalent:@""];
-            [newMenuItem setTarget:self];
-            [newMenuItem setRepresentedObject:[browsers lastObject]];
-        }
-        else
-        {
-            newMenuItem = [[NSMenuItem alloc] initWithTitle:kMenuItemTitle action:NULL keyEquivalent:@""];
-            NSMenu * browsersMenu = [[NSMenu alloc] initWithTitle:kMenuItemTitle];
-            
-            for (NSString *browserID in browsers)
-            {
-                NSString *itemTitle = [NSString stringWithFormat:@"Post using %@", [[[browserID componentsSeparatedByString:@"."] lastObject] capitalizedString]];
-                NSMenuItem * browserMenuItem = [[NSMenuItem alloc] initWithTitle:itemTitle action:@selector(postToInstacodes:) keyEquivalent:@""];
-                [browserMenuItem setTarget:self];
-                [browserMenuItem setRepresentedObject:browserID];
-                [browsersMenu addItem:browserMenuItem];
-            }
-            
-            [newMenuItem setSubmenu:browsersMenu];
-        }
+        [newMenuItem setTarget:self];
     
         [[editMenuItem submenu] addItem:newMenuItem];
-        [newMenuItem release];
     }
 }
 
@@ -120,47 +106,14 @@ NSString * const kMenuItemTitle = @"Post Selection to Instacode";
     }
 }
 
-- (void)postToInstacodes:(id)sender
+- (void)postWTF:(id)sender
 {
-    NSLog(@"[InstaCodesPlugin] Posting to Instacod.es:\n%@", self.currentSelection);
-    
-    NSString * browserID = [sender representedObject];
-    
-    if (browserID == nil)
-    {
-        [[NSAlert alertWithMessageText:@"No browsers" defaultButton:@"OK" alternateButton:nil otherButton:nil
-            informativeTextWithFormat:@"No WebGL supporting browsers installed on your system"] runModal];
-    }
-    else
-    {
-        BOOL webGLEnabled = YES;
-        
-        if ([browserID isEqualToString:kBrowserBundleIDSafari])
-        {
-            // Check if Safari supports WebGL
-            BOOL supportsWebGL = [[[[NSUserDefaults standardUserDefaults] persistentDomainForName:kBrowserBundleIDSafari]
-                objectForKey:kSafariPrefsWebGLSupportKey] boolValue];
-            
-            if (!supportsWebGL)
-            {
-                [[NSAlert alertWithMessageText:@"WebGL support is disabled in Safari by default"
-                    defaultButton:@"OK" alternateButton:nil otherButton:nil
-                    informativeTextWithFormat:@"Instacod.es requires browser that supports WebGL to work properly. To enable WebGL in Safari, "
-                    "go to Safari Preferences -> Advanced tab, check 'Show Develop menu in menu bar'. "
-                    "Then open Develop menu and check Enable WebGL menu item."] runModal];
-                webGLEnabled = NO;
-            }
-        }
-        
-        if (webGLEnabled)
-        {
-            NSString * postCode = [self.currentSelection URLEncodedString];
-            NSString * URLString = [NSString stringWithFormat:@"http://instacod.es/?post_code=%@&post_lang=%@", postCode, @"ObjC"];
-            
-            [[NSWorkspace sharedWorkspace] openURLs:@[[NSURL URLWithString:URLString]] withAppBundleIdentifier:browserID
-                options:NSWorkspaceLaunchDefault additionalEventParamDescriptor:nil launchIdentifiers:NULL];
-        }
-    }
+  WTFItem* item = [[WTFItem alloc] initWithDocumentLocation:[self.lastEditor valueForKey:@"_documentLocationUnderMouse"] text:[self.lastEditor valueForKey:@"selectedText"]];
+    [[NSDistributedNotificationCenter defaultCenter] postNotificationName:WTFNewNotificationKey
+                                                                   object:@"WTFPlugin"
+                                                                 userInfo:@{@"start:" : [item.documentLocation valueForKey:@"startingColumnNumber"]}
+                                                       deliverImmediately:YES];
+  NSLog(@"item");
 }
 
 #pragma mark - Private methods -
