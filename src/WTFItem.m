@@ -118,4 +118,23 @@
   }];
 }
 
+- (NSDictionary*)dictionaryRepresentation {
+    return @{
+             @"code": self.text ?: @"",
+             @"description": self.itemDescription ?: @"",
+             @"url_string": self.documentURL.absoluteString ?: @"",
+             @"startingLineNumber": @([self startingLineNumber]),
+             @"endingLineNumber": @([self endingLineNumber])
+            };
+}
+
+- (NSInteger)startingLineNumber {
+  return 0; // TODO:
+}
+
+- (NSInteger)endingLineNumber {
+  return 0; // TODO:
+}
+
+
 @end
